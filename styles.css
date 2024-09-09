@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.slogan {
+    margin: 0;
+    font-style: italic;
+    color: #666;
+}
+
+.recruitment-banner {
+    max-width: 50%;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+}
+
+.navbar {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(248, 249, 250, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar li a, .dropbtn {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s;
+    position: relative;
+}
+
+.navbar li a:hover, .dropdown:hover .dropbtn {
+    color: #0D7C66;
+}
+
+.navbar li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #0D7C66;
+    transition: all 0.3s ease;
+}
+
+.navbar li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        flex-direction: column;
+    }
+    
+    .recruitment-banner {
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dropdown-content {
+        position: static;
+        opacity: 1;
+        transform: none;
+        display: none;
+    }
+
+    .dropdown-content.show {
+        display: block;
+    }
+}
+.logo {
+    width: 100px; /* Giảm từ 150px xuống 100px */
+    height: auto;
+    transition: filter 0.3s ease;
+}
+
+/* Nếu cần, bạn có thể điều chỉnh container của logo */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Thêm padding nếu cần để cân đối lại khoảng trống */
+    padding: 5px 0;
+}
+
+/* Điều chỉnh kích thước slogan nếu cần */
+.slogan {
+    margin: 5px 0 0;
+    font-style: italic;
+    color: #666;
+    font-size: 12px; /* Giảm kích thước chữ nếu cần */
+}
+
+/* Giữ nguyên hiệu ứng hover */
+.logo-link {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+}
+
+.logo-link:hover .logo {
+    filter: brightness(1.1);
+}
